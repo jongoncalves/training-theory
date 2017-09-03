@@ -1,22 +1,27 @@
 # Running project locally
 
-Create virtual environment
+Install the generator and Yeoman
 
-    virtualenv venv_tt
-    
-    source venv_tt/bin/activate
-    
-    pip install mezzanine
-    
-    mezzanine-project mezz_tt_app
-    
-    cd mezz_tt_app
+    npm install -g generator-keystone
+    npm install -g yo
 
-Create the DB and take the defaults
+Run the generator via Yeoman
 
-    python manage.py createdb
+    yo keystone
 
-Run the server
+Install mongodb if you don't have it yet
 
-    python manage.py runserver
+    brew install mongodb
+
+Create the data dir for mongo
+
+    mkdir -p /data/db
+
+Make the permissions are set properly for the user running mongo
+
+    sudo chmod 0755 /data/db && sudo chown $USER /data/db
+
+Run the app locally
+
+    node keystone
 
